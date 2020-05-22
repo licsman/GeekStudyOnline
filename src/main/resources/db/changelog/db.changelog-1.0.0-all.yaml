@@ -1,0 +1,389 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-geek_admin-table
+      author: MiaoJw
+      comment: Create table Geek_admin
+      changes:
+        - createTable:
+            tablename: geek_admin
+            remarks: administrator Info
+            columns:
+              - column:
+                  name: admin_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: admin_name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: admin_pass
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: admin_truename
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: admin_age
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: admin_gender
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: admin_thumb
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+  - changeSet:
+      id: create-geek_coursecate-table
+      author: MiaoJw
+      comment: Create table Geek_coursecate
+      changes:
+        - createTable:
+            tablename: geek_coursecate
+            remarks: Course category Info
+            columns:
+              - column:
+                  name: cate_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: cate_name
+                  type: varchar(100)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: cate_title
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: cate_keywords
+                  type: text
+                  constraints:
+                    nullable: true
+              - column:
+                  name: cate_pid
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: cate_createTime
+                  type: datetime
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: create-geek_coursecontent-table
+      author: MiaoJw
+      comment: Create table Geek_coursecontent
+      changes:
+        - createTable:
+            tablename: geek_coursecontent
+            remarks: Course Info
+            columns:
+              - column:
+                  name: course_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: course_name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: course_title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: course_description
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: course_teacher
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: course_createTime
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: course_view
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: course_thumb
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: course_num
+                  type: int
+                  constraints:
+                    nullable: true
+              - column:
+                  name: cate_id
+                  type: int
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: create-geek_coursevideo-table
+      author: MiaoJw
+      comment: Create table Geek_coursevideo
+      changes:
+        - createTable:
+            tablename: geek_coursevideo
+            remarks: Course video Info
+            columns:
+              - column:
+                  name: video_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: video_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: video_description
+                  type: text
+                  constraints:
+                    nullable: true
+              - column:
+                  name: video_url
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: course_id
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: video_createTime
+                  type: datetime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: video_order
+                  type: int
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: create-geek_material-table
+      author: MiaoJw
+      comment: Create table Geek_material
+      changes:
+        - createTable:
+            tablename: geek_material
+            remarks: material Info
+            columns:
+              - column:
+                  name: material_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: material_name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: material_title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: material_content
+                  type: text
+                  constraints:
+                    nullable: true
+              - column:
+                  name: material_view
+                  type: int
+                  constraints:
+                    nullable: true
+              - column:
+                  name: material_createTime
+                  type: dateTime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: material_thumb
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: material_tag
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: material_editor
+                  type: varchar(100)
+                  constraints:
+                    nullable: true
+  - changeSet:
+      id: create-geek_studyway-table
+      author: MiaoJw
+      comment: Create table Geek_studyway
+      changes:
+        - createTable:
+            tablename: geek_studyway
+            remarks: Studyway Info
+            columns:
+              - column:
+                  name: studyway_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: studyway_name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: studyway_title
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: studyway_content
+                  type: text
+                  constraints:
+                    nullable: true
+              - column:
+                  name: studyway_view
+                  type: int
+                  constraints:
+                    nullable: true
+              - column:
+                  name: studyway_createTime
+                  type: dateTime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: studyway_thumb
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: studyway_tag
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: studyway_editor
+                  type: varchar(100)
+                  constraints:
+                    nullable: true
+  - changeSet:
+      id: create-geek_superadmin-table
+      author: MiaoJw
+      comment: Create table Geek_superadmin
+      changes:
+        - createTable:
+            tablename: geek_superadmin
+            remarks: Super administrator Info
+            columns:
+              - column:
+                  name: admin_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: admin_account
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: admin_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: admin_password
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: create-geek_teacher-table
+      author: MiaoJw
+      comment: Create table Geek_teacher
+      changes:
+        - createTable:
+            tablename: geek_teacher
+            remarks: teacher Info
+            columns:
+              - column:
+                  name: teacher_id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: teacher_gender
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: teacher_description
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: teacher_age
+                  type: int
+                  constraints:
+                    nullable: true
+              - column:
+                  name: teacher_createTime
+                  type: dateTime
+                  constraints:
+                    nullable: false
+              - column:
+                  name: teacher_thumb
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: teacher_tag
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: course_id
+                  type: int
+                  constraints:
+                    nullable: true
