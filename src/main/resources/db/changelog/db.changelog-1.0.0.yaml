@@ -353,6 +353,11 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
+                  name: teacher_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+              - column:
                   name: teacher_gender
                   type: int
                   constraints:

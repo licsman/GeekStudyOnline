@@ -68,9 +68,51 @@
                              targetProject="src/main/java">
         </javaClientGenerator>
 
-        <table tableName="animal" enableCountByExample="true" enableDeleteByExample="true"
+        <table tableName="geek_admin" enableCountByExample="true" enableDeleteByExample="true"
                enableSelectByExample="true" enableUpdateByExample="true">
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <generatedKey column="admin_id" sqlStatement="MySql" identity="true"/>
+            <columnRenamingRule searchString="is_"/>
+        </table>
+
+        <table tableName="geek_coursecate" enableCountByExample="true" enableDeleteByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true">
+            <generatedKey column="cate_id" sqlStatement="MySql" identity="true"/>
+            <columnRenamingRule searchString="is_"/>
+        </table>
+
+        <table tableName="geek_course" enableCountByExample="true" enableDeleteByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true">
+            <generatedKey column="course_id" sqlStatement="MySql" identity="true"/>
+            <columnRenamingRule searchString="is_"/>
+        </table>
+
+        <table tableName="geek_coursevideo" enableCountByExample="true" enableDeleteByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true">
+            <generatedKey column="video_id" sqlStatement="MySql" identity="true"/>
+            <columnRenamingRule searchString="is_"/>
+        </table>
+
+        <table tableName="geek_material" enableCountByExample="true" enableDeleteByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true">
+            <generatedKey column="material_id" sqlStatement="MySql" identity="true"/>
+            <columnRenamingRule searchString="is_"/>
+        </table>
+
+        <table tableName="geek_studyway" enableCountByExample="true" enableDeleteByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true">
+            <generatedKey column="studyway_id" sqlStatement="MySql" identity="true"/>
+            <columnRenamingRule searchString="is_"/>
+        </table>
+
+        <table tableName="geek_superadmin" enableCountByExample="true" enableDeleteByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true">
+            <generatedKey column="admin_id" sqlStatement="MySql" identity="true"/>
+            <columnRenamingRule searchString="is_"/>
+        </table>
+
+        <table tableName="geek_teacher" enableCountByExample="true" enableDeleteByExample="true"
+               enableSelectByExample="true" enableUpdateByExample="true">
+            <generatedKey column="teacher_id" sqlStatement="MySql" identity="true"/>
             <columnRenamingRule searchString="is_"/>
         </table>
 

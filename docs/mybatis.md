@@ -7,8 +7,7 @@ Generate mybatis files if database schema updated.
 # In root directory, ignore if you have done this.
 mvn install
 
-cd rt_app_manager
-mvn -Dmybatis.generator.jdbcURL=jdbc:mysql://127.0.0.1:3306/app_manager -Dmybatis.generator.jdbcUserId=username -Dmybatis.generator.jdbcPassword=password mybatis-generator:generate
+mvn -Dmybatis.generator.jdbcURL=jdbc:mysql://127.0.0.1:3306/geekstudy -Dmybatis.generator.jdbcUserId=root -Dmybatis.generator.jdbcPassword=MySQL!23 mybatis-generator:generate
 ```
 
 You can also add a maven task in IDE and pass `mybatis.generator.jdbcURL`,
