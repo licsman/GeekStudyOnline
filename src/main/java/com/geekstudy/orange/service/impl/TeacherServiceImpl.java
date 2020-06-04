@@ -9,7 +9,9 @@ public class TeacherServiceImpl implements BaseService {
 
     @Override
     public String addTeacher() {
-        GeekTeacherExample gte = bu
+        GeekTeacherExample gte = new GeekTeacherExample()
+                .createCriteria()
+                .example();
         return null;
     }
 }

@@ -102,6 +102,11 @@
             <artifactId>mybatis-dynamic-sql</artifactId>
             <version>${mybatis.dynamic.sql.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-compress</artifactId>
+            <version>1.19</version>
+        </dependency>
     </dependencies>
 
     <!--build  project-->
