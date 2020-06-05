@@ -1,5 +1,7 @@
 package com.geekstudy.orange.db.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,6 +21,7 @@ public class GeekTeacher {
      *
      * @mbg.generated
      */
+    @JsonIgnore
     private Integer teacherId;
 
     /**
@@ -72,6 +75,7 @@ public class GeekTeacher {
      *
      * @mbg.generated
      */
+    @JsonIgnore
     private LocalDate teacherCreatetime;
 
     /**
