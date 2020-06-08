@@ -2,6 +2,7 @@ package com.geekstudy.orange.db.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,6 +34,7 @@ public class GeekTeacher {
      *
      * @mbg.generated
      */
+    @NotNull(message = "用户账号不能为空")
     private String teacherName;
 
     /**
