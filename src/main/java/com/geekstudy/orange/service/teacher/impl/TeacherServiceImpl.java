@@ -3,6 +3,8 @@ package com.geekstudy.orange.service.teacher.impl;
 import com.geekstudy.orange.db.mapper.GeekTeacherMapper;
 import com.geekstudy.orange.db.model.GeekTeacher;
 import com.geekstudy.orange.service.teacher.TeacherService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,8 @@ public class TeacherServiceImpl implements TeacherService {
     @Autowired
     private GeekTeacherMapper geekTeacherMapper;
 
+    private static final Logger logger = LoggerFactory.getLogger(TeacherServiceImpl.class);
+
     @Override
     public String addTeacher(GeekTeacher geekTeacher) {
         geekTeacher.setTeacherCreatetime(LocalDate.now());
@@ -23,7 +27,9 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public GeekTeacher queryTeacher(int teacherId) {
-        return geekTeacherMapper.selectByPrimaryKey(teacherId);
+        GeekTeacher geekTeacher = geekTeacherMapper.selectByPrimaryKey(teacherId);
+        logger.info("查询的教师信息:{}", geekTeacher);
+        return geekTeacher;
     }
 
     @Override
