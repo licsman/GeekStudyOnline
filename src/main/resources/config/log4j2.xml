@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="OFF" monitorInterval="1800">
+<properties>
+	<property name="LOG_HOME">/orange/log/</property>
+	<property name="INFO_FILE_NAME">orange_info</property>
+	<property name="ERR_FILE_NAME">orange_error</property>
+</properties>
+<Appenders>
+	<Console name="Console" target="SYSTEM_OUT">
+		<ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+		<PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss.SSS} [%t] %-5level %class{36} [%L] [%M] - %msg%xEx%n" />
+	</Console>
+	<RollingRandomAccessFile name="INFO_LOG" fileName="${LOG_HOME}/${INFO_FILE_NAME}.log" filePattern="${LOG_HOME}/${INFO_FILE_NAME}_%d{yyyy-MM-dd}_%i.log">
+		<ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY" />
+		<PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss.SSS} [%t] %-5level %class{36} [%L] [%M] - %msg%xEx%n" />
+		<Policies>
+			<TimeBasedTriggeringPolicy modulate="true" interval="24" />
+			<SizeBasedTriggeringPolicy size="51200 KB" />
+		</Policies>
+		<DefaultRolloverStrategy max="20" />
+	</RollingRandomAccessFile>
+	<RollingRandomAccessFile name="ERR_LOG" fileName="${LOG_HOME}/${ERR_FILE_NAME}.log" filePattern="${LOG_HOME}/${ERR_FILE_NAME}_%d{yyyy-MM-dd}_%i.log">
+		<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+		<PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss.SSS} [%t] %-5level %class{36} [%L] [%M] - %msg%xEx%n" />
+		<Policies>
+			<TimeBasedTriggeringPolicy modulate="true" interval="24" />
+			<SizeBasedTriggeringPolicy size="51200 KB" />
+		</Policies>
+		<DefaultRolloverStrategy max="20" />
+	</RollingRandomAccessFile>
+</Appenders>
+<Loggers>
+	<AsyncRoot level="DEBUG" includeLocation="true">
+		<appender-ref ref="Console" />
+		<appender-ref ref="INFO_LOG" />
+		<appender-ref ref="ERR_LOG" />
+	</AsyncRoot>
+</Loggers>
+</Configuration>
