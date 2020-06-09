@@ -3,7 +3,6 @@ package com.geekstudy.orange.ogException;
 import com.geekstudy.orange.annotation.ExceptionCode;
 import com.geekstudy.orange.apiResponse.OgResult;
 import com.geekstudy.orange.apiResponse.ResultCode;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
