@@ -2,6 +2,7 @@ package com.geekstudy.orange.apiResponse;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.geekstudy.orange.annotation.NoResponseBody;
 import com.geekstudy.orange.ogException.APIException;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
@@ -15,8 +16,9 @@ public class ResponseControllerAdvice implements ResponseBodyAdvice<Object> {
 
     @Override
     public boolean supports(MethodParameter returnType, Class aClass) {
-        // 如果接口返回的类型本身就是ResultVO那就没有必要进行额外的操作，返回false
-        return !returnType.getParameterType().equals(OgResult.class);
+        // 如果接口返回的类型本身就是OgResult那就没有必要进行额外的操作，返回false
+        // 如果包含NoResponseBody注解，就直接返回，不做包装
+        return !(returnType.getParameterType().equals(OgResult.class) || returnType.hasMethodAnnotation(NoResponseBody.class));
     }
 
     @Override
