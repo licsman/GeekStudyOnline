@@ -1,6 +1,7 @@
 package com.geekstudy.orange.db.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.geekstudy.orange.annotation.ExceptionCode;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -35,8 +36,9 @@ public class GeekTeacher {
      *
      * @mbg.generated
      */
-    @NotNull(message = "用户账号不能为空")
-    @Size(min = 6, max = 11, message = "账号长度必须是6-11个字符")
+    @NotNull(message = "TeacherName不能为空")
+    @Size(min = 6, max = 11, message = "TeacherName长度必须是6-11个字符")
+    @ExceptionCode(value = 199, message = "TeacherName验证错误")
     private String teacherName;
 
     /**

@@ -4,8 +4,8 @@ import lombok.Getter;
 
 @Getter
 public class APIException extends RuntimeException{
-    private int code;
-    private String msg;
+    private final int code;
+    private final String msg;
 
     public APIException() {
         this(1001, "接口错误");

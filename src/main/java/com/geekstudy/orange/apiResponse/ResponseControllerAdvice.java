@@ -31,7 +31,7 @@ public class ResponseControllerAdvice implements ResponseBodyAdvice<Object> {
                 throw new APIException("返回String类型错误");
             }
         }
-        // 将原本的数据包装在ResultVO里
+        // 将原本的数据包装在OgResult里
         return new OgResult<>(data);
     }
 }

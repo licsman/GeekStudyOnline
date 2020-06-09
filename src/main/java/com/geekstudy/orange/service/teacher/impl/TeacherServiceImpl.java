@@ -1,6 +1,5 @@
 package com.geekstudy.orange.service.teacher.impl;
 
-import com.geekstudy.orange.apiResponse.OgResult;
 import com.geekstudy.orange.db.mapper.GeekTeacherMapper;
 import com.geekstudy.orange.db.model.GeekTeacher;
 import com.geekstudy.orange.service.teacher.TeacherService;
