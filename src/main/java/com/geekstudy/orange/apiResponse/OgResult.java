@@ -4,9 +4,9 @@ import lombok.Getter;
 
 @Getter
 public class OgResult<T> {
-    private int code;
-    private String message;
-    private T data;
+    private final int code;
+    private final String message;
+    private final T data;
 
     public OgResult(T data){
         this(ResultCode.SUCCESS, data);
