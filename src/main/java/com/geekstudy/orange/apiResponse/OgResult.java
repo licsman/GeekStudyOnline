@@ -17,4 +17,10 @@ public class OgResult<T> {
         this.message = resultCode.getMsg();
         this.data = data;
     }
+
+    public OgResult(int code, String message, T data) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
+    }
 }
