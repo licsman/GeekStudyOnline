@@ -21,14 +21,28 @@ public class TeacherController {
     }
 
     @ApiOperation(value = "add new teacher", notes = "add new teacher")
-    @PostMapping(value = "/addTeacher", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "addTeacher", produces = MediaType.APPLICATION_JSON_VALUE)
     public OgResult<String> addTeacher(@RequestBody @Valid GeekTeacher geekTeacher) {
         return teacherService.addTeacher(geekTeacher);
     }
 
-    @ApiOperation(value = "query new teacher")
-    @GetMapping(value = "/getTeacher/{teacherId}")
+    @ApiOperation(value = "query teacher info")
+    @GetMapping(value = "{teacherId}")
     public OgResult<GeekTeacher> queryTeacher(@PathVariable int teacherId) {
         return teacherService.queryTeacher(teacherId);
     }
+
+    @ApiOperation(value = "delete teacher info")
+    @DeleteMapping(value = "{teacherId}")
+    public OgResult<String> deleteTeacher(@PathVariable int teacherId) {
+        return teacherService.deleteTeacher(teacherId);
+    }
+
+    @ApiOperation(value = "update teacher info")
+    @PutMapping(value = "{teacherId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public OgResult<String> updateTeacher(@PathVariable int teacherId, @RequestBody GeekTeacher geekTeacher) {
+        geekTeacher.setTeacherId(teacherId);
+        return teacherService.updateTeacher(geekTeacher);
+    }
+
 }

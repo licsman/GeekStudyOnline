@@ -4,16 +4,16 @@ import lombok.Getter;
 
 @Getter
 public enum ResultCode {
-    SUCCESS(1000, "操作成功"),
+    SUCCESS(1000, "response success"),
 
-    FAILED(1001, "响应失败"),
+    FAILED(1001, "response failed"),
 
-    VALIDATE_FAILED(1002, "参数校验失败"),
+    VALIDATE_FAILED(1002, "Parameter verification failed"),
 
-    ERROR(5000, "未知错误");
+    ERROR(5000, "Unknown Errors");
 
-    private int code;
-    private String msg;
+    private final int code;
+    private final String msg;
 
     ResultCode(int code, String msg) {
         this.code = code;
