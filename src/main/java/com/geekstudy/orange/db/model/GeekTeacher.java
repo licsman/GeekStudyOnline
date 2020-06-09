@@ -3,6 +3,7 @@ package com.geekstudy.orange.db.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,6 +36,7 @@ public class GeekTeacher {
      * @mbg.generated
      */
     @NotNull(message = "用户账号不能为空")
+    @Size(min = 6, max = 11, message = "账号长度必须是6-11个字符")
     private String teacherName;
 
     /**
@@ -77,7 +79,6 @@ public class GeekTeacher {
      *
      * @mbg.generated
      */
-    @JsonIgnore
     private LocalDate teacherCreatetime;
 
     /**
