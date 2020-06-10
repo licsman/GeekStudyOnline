@@ -81,10 +81,10 @@
         </dependency>
 
         <!--liquibase-->
-<!--        <dependency>-->
-<!--            <groupId>org.liquibase</groupId>-->
-<!--            <artifactId>liquibase-core</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
 
         <!--mybatis-->
         <dependency>
@@ -144,6 +144,7 @@
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>${mybatis.generator.version}</version>
                 <configuration>
                     <verbose>true</verbose>
                     <overwrite>true</overwrite>
