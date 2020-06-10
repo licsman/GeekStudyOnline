@@ -2,6 +2,7 @@ package com.geekstudy.orange.db.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.geekstudy.orange.annotation.ExceptionCode;
+import com.geekstudy.orange.apiResponse.AppError;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -38,7 +39,7 @@ public class GeekTeacher {
      */
     @NotNull(message = "TeacherName不能为空")
     @Size(min = 6, max = 11, message = "TeacherName长度必须是6-11个字符")
-    @ExceptionCode(value = 199, message = "TeacherName验证错误")
+    @ExceptionCode(appError = AppError.TEACHER_NAMED_FORMAT_ERROR)
     private String teacherName;
 
     /**
