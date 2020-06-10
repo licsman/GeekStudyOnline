@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Service
 public class TeacherServiceImpl implements TeacherService {
@@ -20,7 +20,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public String addTeacher(GeekTeacher geekTeacher) {
-        geekTeacher.setTeacherCreatetime(LocalDate.now());
+        geekTeacher.setTeacherCreatetime(LocalDateTime.now());
         int res = geekTeacherMapper.insert(geekTeacher);
         return res > 0 ? "添加成功！" : "添加失败！";
     }
@@ -40,8 +40,8 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public String updateTeacher(GeekTeacher geekTeacher) {
-        LocalDate date = geekTeacherMapper.selectByPrimaryKey(geekTeacher.getTeacherId()).getTeacherCreatetime();
-        geekTeacher.setTeacherCreatetime(date);
+        LocalDateTime time = geekTeacherMapper.selectByPrimaryKey(geekTeacher.getTeacherId()).getTeacherCreatetime();
+        geekTeacher.setTeacherCreatetime(time);
         int res = geekTeacherMapper.updateByPrimaryKey(geekTeacher);
         return res > 0 ? "信息更新成功！" : "信息更新失败！";
     }

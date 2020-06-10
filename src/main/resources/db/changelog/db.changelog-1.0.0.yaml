@@ -5,7 +5,7 @@ databaseChangeLog:
       comment: Create table Geek_admin
       changes:
         - createTable:
-            tablename: geek_admin
+            tableName: geek_admin
             remarks: administrator Info
             columns:
               - column:
@@ -51,7 +51,7 @@ databaseChangeLog:
       comment: Create table Geek_coursecate
       changes:
         - createTable:
-            tablename: geek_coursecate
+            tableName: geek_coursecate
             remarks: Course category Info
             columns:
               - column:
@@ -92,7 +92,7 @@ databaseChangeLog:
       comment: Create table Geek_coursecontent
       changes:
         - createTable:
-            tablename: geek_coursecontent
+            tableName: geek_coursecontent
             remarks: Course Info
             columns:
               - column:
@@ -153,7 +153,7 @@ databaseChangeLog:
       comment: Create table Geek_coursevideo
       changes:
         - createTable:
-            tablename: geek_coursevideo
+            tableName: geek_coursevideo
             remarks: Course video Info
             columns:
               - column:
@@ -199,7 +199,7 @@ databaseChangeLog:
       comment: Create table Geek_material
       changes:
         - createTable:
-            tablename: geek_material
+            tableName: geek_material
             remarks: material Info
             columns:
               - column:
@@ -231,7 +231,7 @@ databaseChangeLog:
                     nullable: true
               - column:
                   name: material_createTime
-                  type: dateTime
+                  type: datetime
                   constraints:
                     nullable: false
               - column:
@@ -255,7 +255,7 @@ databaseChangeLog:
       comment: Create table Geek_studyway
       changes:
         - createTable:
-            tablename: geek_studyway
+            tableName: geek_studyway
             remarks: Studyway Info
             columns:
               - column:
@@ -287,7 +287,7 @@ databaseChangeLog:
                     nullable: true
               - column:
                   name: studyway_createTime
-                  type: dateTime
+                  type: datetime
                   constraints:
                     nullable: false
               - column:
@@ -311,7 +311,7 @@ databaseChangeLog:
       comment: Create table Geek_superadmin
       changes:
         - createTable:
-            tablename: geek_superadmin
+            tableName: geek_superadmin
             remarks: Super administrator Info
             columns:
               - column:
@@ -342,7 +342,7 @@ databaseChangeLog:
       comment: Create table Geek_teacher
       changes:
         - createTable:
-            tablename: geek_teacher
+            tableName: geek_teacher
             remarks: teacher Info
             columns:
               - column:
@@ -374,7 +374,7 @@ databaseChangeLog:
                     nullable: true
               - column:
                   name: teacher_createTime
-                  type: dateTime
+                  type: datetime
                   constraints:
                     nullable: false
               - column:
