@@ -31,7 +31,7 @@ public class ExceptionControllerAdvice {
 
         // 有注解的话就返回注解的响应信息
         if (annotation != null) {
-            return new OgResult<>(annotation.value(),annotation.message(),defaultMessage);
+            return new OgResult<>(annotation.appError().getCode(), annotation.appError().getMsg() ,defaultMessage);
         }
 
         // 如果字段没有自定义注解就直接提取错误提示信息进行返回
