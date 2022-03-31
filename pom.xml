@@ -15,7 +15,7 @@
     <description>Orange project for Spring Boot</description>
 
     <properties>
-        <spring-boot.version>2.2.7.RELEASE</spring-boot.version>
+        <spring-boot.version>2.5.12</spring-boot.version>
         <java.version>1.8</java.version>
         <swagger.version>2.8.0</swagger.version>
         <mysql.version>8.0.16</mysql.version>
